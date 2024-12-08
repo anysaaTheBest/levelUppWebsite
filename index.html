@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download LevelUpp</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #006400; /* Fondo verde oscuro */
+            margin: 0;
+            color: white; /* Color del texto blanco */
+        }
+        .download-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .download-button img {
+            width: 100px; /* Tamaño grande del logo */
+            height: 100px;
+            margin-right: 20px;
+        }
+        .download-button:hover {
+            background-color: #218838;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!-- First Page -->
+    <div class="page active" id="page1">
+        <h1>Download LevelUpp</h1>
+        <a href="#" class="download-button" onclick="showPage(2)">
+            <img src="logo.png" alt="LevelUpp Logo">
+            Download LevelUpp
+        </a>
+    </div>
+
+    <!-- Second Page -->
+    <div class="page" id="page2">
+        <h1>UPS, try again here</h1>
+        <a href="#" class="download-button" onclick="showPage(3)">
+            <img src="logo.png" alt="LevelUpp Logo">
+            Try Again
+        </a>
+    </div>
+
+    <!-- Third Page -->
+    <div class="page" id="page3">
+        <h1>Seems like we are having some problems...</h1>
+        <p>Give us 860k to fix them :)</p>
+        <a href="https://youtu.be/hPr-Yc92qaY?si=WVoQXCLYjGEotyyQ" class="download-button">
+            Donate 860k
+        </a>
+    </div>
+
+    <script>
+        function showPage(pageNumber) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+            // Show the selected page
+            document.getElementById('page' + pageNumber).classList.add('active');
+        }
+    </script>
+</body>
+</html>
